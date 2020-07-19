@@ -33,12 +33,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Django Apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Custom Apps
+    'registration.apps.RegistrationConfig'
 ]
 
 MIDDLEWARE = [
@@ -75,10 +78,18 @@ WSGI_APPLICATION = 'phoenix.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+
+# Change to use mysql db instead of sqllite
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        # Add the name of the database here
+        'NAME': 'phoenix',
+        'USER': 'root',
+        #Add the password to the database here
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -100,6 +111,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# Using custom user model
+AUTH_USER_MODEL = 'registration.User'
 
 
 # Internationalization
