@@ -22,7 +22,7 @@ Git URL will go here
 Install the requirements 
 
 ```
-pip install -r requirements.txtuntil finished
+pip install -r requirements.txt
 ```
 
 Switch the Database in Settings.py of the project
@@ -30,7 +30,7 @@ Switch the Database in Settings.py of the project
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'IntegrationServicesPortal',
+        'NAME': '',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
